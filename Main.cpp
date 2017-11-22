@@ -4,18 +4,29 @@
 #include <fstream>
 #include <Windows.h>
 #include <string>
+#include <sstream>
 
 using namespace::std;
 
 int main()
 {
-	string tab[20000] = {};
+	string tab[20000];
+	fstream plik;
+	int x;
+	int klucz[20000] = {};
+	int kolizja = 0;
 
-	for (int x = 0; x <= 20000; x++)
+	plik.open("slowa.txt", ios::in);
+
+	for (int i = 0; i < 20000; i++)
 	{
-		cout << tab[x];
+		plik >> tab[i];
+		//tab[x] = "costam " + to_string(x) + " costam " + to_string(x);
+		cout << tab[i];
+		//system("pause");
+		x = tab[i].length();
 	}
-
+	plik.close();
 
 
 
